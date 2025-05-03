@@ -47,8 +47,21 @@ Despite these innovations, the integration of blockchain-based identity into nat
 \section{Background \& Related Work}
 The internet is rapidly evolving with the emergence of Web3, a new phase defined by decentralization, user ownership, and cryptographic security. Unlike the current Web2 landscape, where user data is controlled by centralized platforms, Web3 empowers individuals to manage their own identities and digital assets without relying on third parties \cite{what-is-web3}. This shift introduces new possibilities for privacy-preserving and tamper-resistant identity systems. Several projects, such as various implementations of Proof of Humanity are already exploring how decentralized technologies can reshape how we approach identity authentication.
 
-\subsection{Why Ethereum?}
-Explain the decentralization mechanisim. How does Ethereum protect against fakes?
+\subsection{Decentralization}
+When discussing any system, it is important to understand the system and the environment that surrounds it. Web3 technology shifts away from centralization, and hierarchical distribution, to a decentralized system. A decentralized system is a system where components operate on local information to achieve goals, rather than the result of a central ordering influence. This removes the need for a system to rely on a centralized authority and thus can unleash enormous potential in the space of identity verification. Centralized ID systems, create single points of failure which makes them vulnerable to data breaches, censorship, or misuse of authority. Figure \ref{fig:decentralized} helps visualize the difference between the various existing systems and the theoretical fault tolerance of a decentralized system.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{decentralized.png}
+    \caption{Centralized, Distributed, and Decentralized Systems | Ethereum Stack Exchange}
+    \label{fig:decentralized}
+\end{figure}
+
+\subsection{Blockchain}
+A blockchain is a data structure that is analogous to an append-only linked list. This ledger is distrubuted to form a distributed system. Additionally, adding to the ledger is done without a central authority using a consensus mechanism, which ensures agreement across the network on the validity of new transactions. In Ethereum’s case, this consensus is maintained by validators, who propose and attest to new blocks in exchange for rewards, thereby securing the network. Ethereum is a blockchain with a computer embedded in it. This system was revolutionary in that it was the first platform to introduce the concept of smart contracts. Smart contracts are programs uploaded and executed by the network. These programs are executed in a quasi–Turing complete programming environment by using gas to ensure that a program halts. The Ethereum Virtual Machine (EVM) maintains a consistent world state across all nodes in the network. There are two types of accounts defined by Ethereum: externally owned accounts (EOAs) controlled by private keys, and contract accounts; which are governed by smart contract code. In our case, this can allow users to interact with smart contracts to register, verify, and manage digital identities without the need for a centralized entity. 
+
+\subsection{NFTs}
+
 
 \subsection{Proof of Humanity}
 Proof of Humanity (PoH) is a decentralized identity verification system designed to ensure that participants in a digital ecosystem are real, human individuals rather than bots \cite{what-is-poh}. As artificial intelligence grows increasingly capable of mimicking human behavior and speech, the need for reliable human verification has become more urgent. Proof of Humanity addresses this challenge by combining social verification with a reputation-based system on the Ethereum blockchain. There are many different implementations of Proof of Humanity. In this paper, we will explore a few of these implementations. 
