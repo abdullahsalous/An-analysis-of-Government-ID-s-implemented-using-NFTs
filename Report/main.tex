@@ -58,13 +58,27 @@ When discussing any system, it is important to understand the system and the env
 \end{figure}
 
 \subsection{Blockchain}
-A blockchain is a data structure that is analogous to an append-only linked list. This ledger is distrubuted to form a distributed system. Additionally, adding to the ledger is done without a central authority using a consensus mechanism, which ensures agreement across the network on the validity of new transactions. In Ethereum’s case, this consensus is maintained by validators, who propose and attest to new blocks in exchange for rewards, thereby securing the network. Ethereum is a blockchain with a computer embedded in it. This system was revolutionary in that it was the first platform to introduce the concept of smart contracts. Smart contracts are programs uploaded and executed by the network. These programs are executed in a quasi–Turing complete programming environment by using gas to ensure that a program halts. The Ethereum Virtual Machine (EVM) maintains a consistent world state across all nodes in the network. There are two types of accounts defined by Ethereum: externally owned accounts (EOAs) controlled by private keys, and contract accounts; which are governed by smart contract code. In our case, this can allow users to interact with smart contracts to register, verify, and manage digital identities without the need for a centralized entity. 
+A blockchain is a data structure that is analogous to an append-only linked list. This ledger is distrubuted to form a distributed system. Additionally, adding to the ledger is done without a central authority using a consensus mechanism, which ensures agreement across the network on the validity of new transactions. In Ethereum’s case, this consensus is maintained by validators, who propose and attest to new blocks in exchange for rewards, thereby securing the network. Ethereum is a blockchain with a computer embedded in it. This system was revolutionary in that it was the first platform to introduce the concept of smart contracts. Smart contracts are programs uploaded and executed by the network. These programs are executed in a quasi–Turing complete programming environment by using gas to ensure that a program halts. The Ethereum Virtual Machine (EVM) maintains a consistent world state across all nodes in the network. The relationship between the execution and consensus client are highlighted in Figure \ref{fig:con-exe}. There are two types of accounts defined by Ethereum: externally owned accounts (EOAs) controlled by private keys, and contract accounts; which are governed by smart contract code. In our case, this can allow users to interact with smart contracts to register, verify, and manage digital identities without the need for a centralized entity. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{consensus-execution.png}
+    \caption{Ethereum Network Architecture | geth.ethereum.org}
+    \label{fig:con-exe}
+\end{figure}
 
 \subsection{NFTs}
+NFTs (non-fungible tokens) are unique digital assets stored on the Ethereum blockchain. Unlike regular tokens like ETH or USDC, which are all identical and interchangeable (fungible), each NFT is one-of-a-kind with distinct properties. This uniqueness makes NFTs ideal for representing individual digital or real-world items like art, collectibles, proving your online identity, ticketing, or real estate. NFTs are created and managed through Ethereum smart contracts, which follow standards like ERC-721 or ERC-1155. These contracts assign ownership, generate unique IDs, and store metadata that describes what each NFT represents. Since all ownership and transaction history is recorded on the blockchain, anyone can verify who owns a particular NFT. Additionally, NFT creators can program features like supply limits or automatic royalties into the smart contract, giving them more control and flexibility \cite{what-is-nft}. An example of this is shown in Figure \ref{fig:nft-exp}. As shown, the item is an image with "Blur: Blend" as the owner. The token standard is ERC-721 and the image is stored off-chain. It also shows the creator (address that deployed the smart contract) of the NFT and additional properties of the item. 
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{nft-example.png}
+    \caption{Example NFT | etherscan.io}
+    \label{fig:nft-exp}
+\end{figure}
 
 \subsection{Proof of Humanity}
-Proof of Humanity (PoH) is a decentralized identity verification system designed to ensure that participants in a digital ecosystem are real, human individuals rather than bots \cite{what-is-poh}. As artificial intelligence grows increasingly capable of mimicking human behavior and speech, the need for reliable human verification has become more urgent. Proof of Humanity addresses this challenge by combining social verification with a reputation-based system on the Ethereum blockchain. There are many different implementations of Proof of Humanity. In this paper, we will explore a few of these implementations. 
+Proof of Humanity (PoH) is a decentralized identity verification system designed to ensure that participants in a digital ecosystem are real, human individuals rather than bots \cite{what-is-poh}. As artificial intelligence grows increasingly capable of mimicking human behavior and speech, the need for reliable human verification has become more urgent. Proof of Humanity addresses this challenge by combining social verification with a reputation-based system on the Ethereum blockchain. There are many different implementations of Proof of Humanity. In this paper, we will explore a few of these implementations.
 
 The first implementation to examine is Proof of Humanity by Kleros. PoH by Kleros requires users to first connect an online wallet. The wallet address provided by the user is publicly linked to their identity. Then, the registration process begins. Registration requires a user to submit a name, photo, and video holding their wallet address. They are then vouched for by an existing verified member. This crowd-sourced, tamper-resistant approach can reduce the risk of Sybil attacks and fake accounts while giving users greater control over their online interactions. By removing the need for centralized authorities, Proof of Humanity by Kleros seeks to offer a trustable and scalable framework for authenticating digital identity in Web3.
 
@@ -101,6 +115,8 @@ https://idscan.net/blog/how-common-are-fake-ids/?srsltid=AfmBOoqOPSxNFDdifCClMan
 \bibitem{what-is-web3}P. Shoemaker, “What is web3? web 3.0 explained,” Identity, https://www.identity.com/web3/.
 
 \bibitem{what-is-poh}P. Shoemaker, “Why proof of humanity is more important than ever,” Identity, https://www.identity.com/why-proof-of-humanity-is-more-important-than-ever/.
+
+\bibitem{what-is-nft}“Non-fungible tokens (NFT),” ethereum.org, https://ethereum.org/en/nft/#nft-use-cases.
 
 \end{thebibliography}
 
