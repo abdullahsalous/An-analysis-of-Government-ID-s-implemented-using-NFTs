@@ -24,7 +24,7 @@ abdullah.r.salous-1@ou.edu}
 \maketitle
 
 \begin{abstract}
-In the United States, traditional government-issued IDs such as driver's licenses, Social Security numbers, and passports are increasingly vulnerable to fraud, forgery, and data misuse. As a potential alternative, this paper explores the feasibility of a blockchain-based digital identification system using non-fungible tokens (NFTs). While the concept of on-chain identity is still emerging, several real-world implementations such as various implementations of Proof of Humanity offer foundational insights. This study empirically analyzes these existing Web3 identity projects to identify their strengths, limitations, and technical design patterns. Additionally, the paper proposes a prototype schema for NFT-based identity credentials. The proposed approach will be compared against current U.S. ID systems, focusing on security, scalability, data minimization, and legal implications. The goal is to determine whether identity NFTs can practically enhance or complement national identity infrastructure in an effective way.
+In the United States, traditional government-issued IDs such as driver's licenses, Social Security numbers, and passports are increasingly vulnerable to fraud, forgery, and data misuse. As a potential alternative, this paper explores the feasibility of a blockchain-based digital identification system using non-fungible tokens (NFTs). While the concept of on-chain identity is still emerging, several real-world implementations such as various implementations of Proof of Humanity offer foundational insights. This study empirically analyzes these existing Web3 identity projects to identify their strengths, limitations, and technical design patterns. Additionally, the paper proposes a prototype schema for blockchain-based identity credentials. The proposed approach will be compared against current U.S. ID systems, focusing on security, scalability, data minimization, and legal implications. The goal is to determine whether identity NFTs can practically enhance or complement national identity infrastructure in an effective way.
 \end{abstract}
 
 \section{Introduction}
@@ -78,9 +78,9 @@ NFTs (non-fungible tokens) are unique digital assets stored on the Ethereum bloc
 \end{figure}
 
 \subsection{Proof of Humanity}
-Proof of Humanity (PoH) is a decentralized identity verification system designed to ensure that participants in a digital ecosystem are real, human individuals rather than bots \cite{what-is-poh}. As artificial intelligence grows increasingly capable of mimicking human behavior and speech, the need for reliable human verification has become more urgent. Proof of Humanity addresses this challenge by combining social verification with a reputation-based system on the Ethereum blockchain. There are many different implementations of Proof of Humanity. In this paper, we will explore a few of these implementations.
+Proof of Humanity (PoH) is a decentralized identity verification system designed to ensure that participants in a digital ecosystem are real, human individuals rather than bots \cite{what-is-poh}. As artificial intelligence grows increasingly capable of mimicking human behavior and speech, the need for reliable human verification has become more urgent. Proof of Humanity addresses this challenge by combining social verification with a reputation-based system on the Ethereum blockchain. There are many different implementations of Proof of Humanity. In this paper, we will focus on Proof of Humanity by Kleros.
 
-The first implementation to examine is Proof of Humanity by Kleros. PoH by Kleros requires users to first connect an online wallet. The wallet address provided by the user is publicly linked to their identity. Then, the registration process begins. Registration requires a user to submit a name, photo, and video holding their wallet address. They are then vouched for by an existing verified member. This crowd-sourced, tamper-resistant approach can reduce the risk of Sybil attacks and fake accounts while giving users greater control over their online interactions. By removing the need for centralized authorities, Proof of Humanity by Kleros seeks to offer a trustable and scalable framework for authenticating digital identity in Web3.
+The first implementation to examine is Proof of Humanity by Kleros. PoH by Kleros requires users to first connect an online wallet. The wallet address provided by the user is publicly linked to their identity. Then, the registration process begins. Registration requires a user to submit a name, photo, and video holding their wallet address. They are then vouched for by an existing verified member as shown in \ref{fig:poh-kleros}. This crowd-sourced, tamper-resistant approach can reduce the risk of Sybil attacks and fake accounts while giving users greater control over their online interactions. By removing the need for centralized authorities, Proof of Humanity by Kleros seeks to offer a trustable and scalable framework for authenticating digital identity in Web3.
 
 \begin{figure}[h!]
     \centering
@@ -89,7 +89,19 @@ The first implementation to examine is Proof of Humanity by Kleros. PoH by Klero
     \label{fig:poh-kleros}
 \end{figure}
 
-Another implementation of Proof of Humanity is 
+What sets Proof of Humanity apart is its use of a Humanity ID. This is a unique identifier tied to each human rather than to a private key or wallet as shown in Figure \ref{fig:poh-humanity-id}. The Humanity ID remains constant even if the wallet address changes, ensuring that the system verifies the person, not just their device. All valid identities across multiple chains are compiled into a unified registry, with one active home chain per ID. The registration criteria include the submitter being alive, not previously registered, and must provide clear and accurate evidence, such as a video showing internal facial features and the wallet address. Proof of Humanity by Kleros does not use a traditional NFT implementation \cite{poh-policy}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{poh-humanity-id.png}
+    \caption{Humanity ID}
+    \label{fig:poh-humanity-id}
+\end{figure}
+
+The system also allows users to challenge pending submissions based on various criteria. These include Sybil attacks (duplicate or fake registrations), identity theft, and incorrect or incomplete submissions. Additionally, deceased individuals can be removed if verifiable evidence is provided. If challenged, registrants must provide proof such as a video reading a recent block hash to remain in the registry \cite{poh-policy}.
+
+\subsection{Other Implementations}
+Another implementation of identity verification is Polygon ID. 
 
 
 \section{Comparative Analysis}
@@ -117,6 +129,8 @@ https://idscan.net/blog/how-common-are-fake-ids/?srsltid=AfmBOoqOPSxNFDdifCClMan
 \bibitem{what-is-poh}P. Shoemaker, “Why proof of humanity is more important than ever,” Identity, https://www.identity.com/why-proof-of-humanity-is-more-important-than-ever/.
 
 \bibitem{what-is-nft}“Non-fungible tokens (NFT),” ethereum.org, https://ethereum.org/en/nft/#nft-use-cases.
+
+\bibitem{poh-policy}“Proof of Humanity Registry Policy,” Proof of humanity V2
 
 \end{thebibliography}
 
