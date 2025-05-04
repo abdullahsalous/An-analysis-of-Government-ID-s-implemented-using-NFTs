@@ -101,10 +101,14 @@ What sets Proof of Humanity apart is its use of a Humanity ID. This is a unique 
 The system also allows users to challenge pending submissions based on various criteria. These include Sybil attacks (duplicate or fake registrations), identity theft, and incorrect or incomplete submissions. Additionally, deceased individuals can be removed if verifiable evidence is provided. If challenged, registrants must provide proof such as a video reading a recent block hash to remain in the registry \cite{poh-policy}.
 
 \subsection{Other Implementations}
-Another implementation of identity verification is Polygon ID. 
-
+Another implementation of identity verification is Polygon ID. Polygon ID is a digital identity platform that uses zero-knowledge cryptography to give users full control over their identity while preserving privacy. Polygon ID is the first identity solution that is private-by-default, and capable of secure on-chain verification. Unlike traditional digital IDs or NFT-based credentials, Polygon ID uses zero-knowledge proofs to let users prove things about themselves without revealing the underlying data. The system is powered by the Iden3 protocol and Circom ZK toolkit, and supports a new model where users can issue and receive attestations without needing a third party. These claims are flexible, composable, and more expressive than NFTs or Verifiable Credentials (VCs), which often fall short on privacy and scalability \cite{polygon}.
 
 \section{Comparative Analysis}
+
+\subsection{Benefits and Drawbacks of NFT-based Approaches}
+NFT-based identity systems offer a verifiable, tamper-evident way to link identities and blockchain records. The immutability of NFTs helps ensure the authenticity of issued credentials. However, these benefits come at the cost of privacy, as NFT metadata is often stored publicly and can be easily linked to wallets, leading to de-anonymization. Additionally, minting NFTs incurs gas fees, which can limit scalability and accessibility, especially on high-cost networks like Ethereum. NFTs also struggle with revocability, since once an NFT is minted, it is permanently on the blockchain. If someone loses eligibility of an attribute, the NFT cannot be unilaterally revoked by the issuer.
+
+\subsection{}
 Criteria for evaluation: tamper resistance, privacy, scalability, data minimization, revocability, and legal compatibility
 Evaluation of current U.S. ID system based on those criteria
 Evaluation of blockchain-based identity systems using real-world data and documentation
@@ -131,6 +135,8 @@ https://idscan.net/blog/how-common-are-fake-ids/?srsltid=AfmBOoqOPSxNFDdifCClMan
 \bibitem{what-is-nft}“Non-fungible tokens (NFT),” ethereum.org, https://ethereum.org/en/nft/#nft-use-cases.
 
 \bibitem{poh-policy}“Proof of Humanity Registry Policy,” Proof of humanity V2
+
+\bibitem{polygon}Polygon Labs, “Introducing polygon ID, zero-knowledge identity for WEB3,” Polygon, https://polygon.technology/blog/introducing-polygon-id-zero-knowledge-own-your-identity-for-web3. 
 
 \end{thebibliography}
 
